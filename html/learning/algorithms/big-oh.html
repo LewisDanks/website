@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Oh</title>
+</head>
+<body>
+    <article>
+        <h1>Big Oh</h1>
+        <p>Big Oh, or OH SHIT I've made another nested for loop, is an order
+            notation for the rough bounds of an algorithms perfomance. i.e as the number
+        of elements tend towards infinity how many times does our algorithm have to access
+    said number of elements</p>
+
+        <p>If our dreaded nested for loop is that mighty OH SHIT moment, Big Oh would 
+            express this existential crisis of coding incompetence as O(n^2).</p>
+        </p>
+        <p><i><u>Story Time</u></i><br>
+            <br>We have a piece of code like this:<br>
+            <div class="code-element">
+                <code>
+                    &emsp; int[] deckOfCards = new int[52];
+                </code>
+            </div>
+            <br>If you could imagine we have filled this empty array with the numeric 
+            value of each card where king, queen, jack = 10, ace = 11 
+            and everything else is self explanitory. Now we would like to shuffle
+            this deck of cards, take a card and compare its value with every other
+            card in the deck, one by one until we have compare all the cards with 
+            every other card.  We would write something like this:<br><br>
+
+            <div class="code-element">
+                <code>
+                &emsp;    for(int i=0; i<52; i++){<br>
+                &emsp;&emsp;        for(int j=i+1; j<52; j++){<br>
+                &emsp;&emsp;&emsp;            compare(deckOfCards[i], deckOfCards[j])<br>
+                &emsp;&emsp;        }<br>
+                &emsp;   }
+                </code>
+            </div>
+
+            <br>So for a 52 deck of cards, Lets call the <i>n</i> in our Big Oh, 52.
+            For our first card we have to compare it, 1 with n-1 cards, thus
+            n-1 or 51 operations. We can now remove that card from the pile.<br><br>
+
+            This reduces n to 51, we repeat the operation, comparing our next card with
+            n-2 or 50 cards. We can do this all the way through and end up with a Time value
+            T(n) of:<br><br>
+
+            T(n) = (n-1)+(n-2)+(n-3)+...+0<br><br>
+            <em>OR</em> expressed properly <br><br>
+            T(n) = (n-1)((n-1)+1) / 2 <br><br>
+            <em>OR</em> expressed even more properlier <br><br>
+            T(n) <= 1/2(n^2) <br><br>
+            Now the beauty of Big Oh, as I mentioned at the very start of this article, is that
+            it is a rough bounds calculation. And with it only being a rough bounds calculation
+            all this work and frankly effort is not <em>usually</em>(usually as in not always but sometimes) required. 
+            We can use the eye test to find the most dominat arithmetic terms, in this case (n^2) and
+            we can express our new found T(n) as simply in its worst case, roughly: <br><br>
+            T(n) = O(n^2)<br><br>
+            
+        Now O(n^2) or worse, algorithms are sometimes not avoidable, but having the idea of big oh in your
+        our toolkits can be very effective, whether thats just to make as many optimizations before use of
+        slower algorithms (i.e. filter out the elements before hand) or take code out of time critical paths
+        (use a factory or overnight service to run slower algorithms or async calls rather than UI blocking).
+        With that being said, sometimes there are better algorithms, faster algorithms and Big Oh can really
+        help us find those "OH shit, is there a better way?" moments. If you wish to learn about some of those
+        better ways, go <a href="#">next.</a>
+        
+        
+
+
+        </p>
+    </article>
+</body>
+</html>
