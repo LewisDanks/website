@@ -5,18 +5,22 @@
 #card-two {
     position: relative;
     top: -350px;
-    animation-name: moveRight300px;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
 }
 
 .card {
     border: 1px solid black;
     height: 350px;
     width: 250px;
-    position: absolute;
+    animation: moveRight300px 2s ease-in-out infinite alternate;
+    animation-play-state: paused;
+    animation-name: moveRight300px;
+    animation-duration: 3s;
+    animation-fill-mode:forwards;
 } 
+
+.card:hover {
+    animation-play-state: running;
+}
 
 @keyframes moveRight300px {
     from {
