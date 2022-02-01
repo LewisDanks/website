@@ -1,0 +1,30 @@
+#card-one {
+    position: relative;
+}
+
+#card-two {
+    position: relative;
+    top: -350px;
+    animation-name: moveRight300px;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.card {
+    border: 1px solid black;
+    height: 350px;
+    width: 250px;
+    position: absolute;
+} 
+
+@keyframes moveRight300px {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 300px;
+    }
+}
+
