@@ -1,34 +1,20 @@
-#card-one {
-    position: relative;
-}
-
-#card-two {
-    position: relative;
-    top: -350px;
-}
-
 .card {
+    position: absolute;
+    left: 300px;
     border: 1px solid black;
     height: 350px;
     width: 250px;
-    animation: moveRight300px 2s ease-in-out infinite alternate;
+    animation: moveRight 1s ease-out forwards;
     animation-play-state: paused;
-    animation-name: moveRight300px;
-    animation-duration: 3s;
-    animation-fill-mode:forwards;
 } 
 
-.card:hover {
-    animation-play-state: running;
-}
-
-@keyframes moveRight300px {
+@keyframes moveRight {
     from {
-        left: 0px;
+        left: 300px;
     }
 
     to {
-        left: 300px;
+        left: 900px;
     }
 }
 
