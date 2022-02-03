@@ -18,3 +18,13 @@
     }
 }
 
+@keyframes moveLeft {
+    from {
+        left: 900px;
+    }
+
+    to {
+        left: 300px;
+    }
+}
+

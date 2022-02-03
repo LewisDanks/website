@@ -6,7 +6,8 @@ function moveCard(e)  {
             target.style.animationPlayState = 'running';
         }
         else {
-            target.style.animationPlayState = 'paused';
+            target.style.animation = 'moveLeft 1s ease-out forwards'
+            target.style.animationPlayState = 'running';
         }
     }
 }
