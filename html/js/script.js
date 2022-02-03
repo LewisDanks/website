@@ -19,4 +19,13 @@ function moveCard(e)  {
     }
 }
 
+
+$(document).ready(function () {    
+    for (var i = 0; i < 51; i++) {
+        jQuery('<div>', {
+            id: 'card-' + i,
+            class: 'card'
+        }).appendTo('#deck')
+    }
+});
 document.addEventListener('click', moveCard, false);
